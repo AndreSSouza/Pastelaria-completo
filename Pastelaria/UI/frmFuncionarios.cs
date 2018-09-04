@@ -29,7 +29,9 @@ namespace Pastelaria.UI
 
             funcDAL.Cadastrar(func);
 
-            MessageBox.Show("Cadastrado com Sucesso!"); ;
+            MessageBox.Show("Cadastrado com Sucesso!");
+
+            dgvConsultaFunc.DataSource = funcDAL.ConsultarTodos();
 
         }
 

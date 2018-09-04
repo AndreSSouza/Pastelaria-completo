@@ -84,6 +84,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(980, 750);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Comic Sans MS", 8.25F);
@@ -92,6 +93,7 @@
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pastelaria";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);

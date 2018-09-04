@@ -40,7 +40,10 @@ namespace Pastelaria.UI
 
             MessageBox.Show("Dados Gravados com Sucesso!");
 
-            dgvConsultaProd.DataSource = prodDAL.ConsultarTodos();            
+            dgvConsultaProd.DataSource = prodDAL.ConsultarTodos();
+            
+            //chamando função do botão limpar 
+            btnLimparProd.PerformClick();
         }
 
         private void frmProdutos_Load(object sender, EventArgs e)
