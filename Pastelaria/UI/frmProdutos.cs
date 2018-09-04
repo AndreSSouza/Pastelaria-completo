@@ -116,5 +116,11 @@ namespace Pastelaria.UI
             }
 
         }
+
+        private void dgvConsultaProd_DoubleClick(object sender, EventArgs e)
+        {
+            //executar clique do botão editar
+            btnEditarProd.PerformClick();
+        }
     }
 }

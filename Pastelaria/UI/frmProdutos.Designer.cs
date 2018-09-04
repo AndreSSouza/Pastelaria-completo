@@ -79,7 +79,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(616, 317);
+            this.tabPage1.Size = new System.Drawing.Size(617, 317);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "CADASTRO";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -231,6 +231,7 @@
             this.dgvConsultaProd.Size = new System.Drawing.Size(616, 276);
             this.dgvConsultaProd.TabIndex = 0;
             this.dgvConsultaProd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultaProd_CellContentClick);
+            this.dgvConsultaProd.DoubleClick += new System.EventHandler(this.dgvConsultaProd_DoubleClick);
             // 
             // btnEditarProd
             // 
