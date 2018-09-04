@@ -36,6 +36,28 @@ namespace Pastelaria.DAL
             con.Desconectar();//Fechando Conexao
         }
 
+        //public void Atualizar(BLL.Produto prod)
+        //{
+        //    SqlCommand cmd = new SqlCommand(@"UPDATE PRODUTO SET NOMEPRODUTO = @NOMEPRODUTO, QUANTIDADE = @QUANTIDADE, PRECO = @PRECO, OBS =  @OBS WHERE CODPRODUTO = @CODPRODUTO");
+
+        //    cmd.Connection = con.Conectar();
+
+        //    cmd.Parameters.AddWithValue("@NOME", cli.Nome);
+        //    cmd.Parameters.AddWithValue("@TELEFONE", cli.Telefone);
+        //    cmd.Parameters.AddWithValue("@CELULAR", cli.Celular);
+        //    cmd.Parameters.AddWithValue("@EMAIL", cli.Email);
+        //    cmd.Parameters.AddWithValue("@ENDERECO", cli.Endereco);
+        //    cmd.Parameters.AddWithValue("@BAIRRO", cli.Bairro);
+        //    cmd.Parameters.AddWithValue("@CIDADE", cli.Cidade);
+        //    cmd.Parameters.AddWithValue("@NUMERO", cli.Numero);
+        //    cmd.Parameters.AddWithValue("@CEP", cli.Cep);
+        //    cmd.Parameters.AddWithValue("@REFERENCIA", cli.Referencia);
+        //    cmd.Parameters.AddWithValue("@CPF", cli.Cpf);
+
+        //    cmd.ExecuteNonQuery();
+        //    con.Desconectar();
+        //}
+
         public DataTable ConsultarTodos()
         {
             SqlDataAdapter da = new SqlDataAdapter(@"SELECT CODCLIENTE [Código], NOME Nome, TELEFONE Telefone, CELULAR Celular, EMAIL [E-mail], ENDERECO [Endereço], CIDADE Cidade, NUMERO [Número], CEP, REFERENCIA [Referência], CPF FROM CLIENTE ORDER BY Nome", con.Conectar());

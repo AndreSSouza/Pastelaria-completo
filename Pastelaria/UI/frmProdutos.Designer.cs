@@ -41,10 +41,11 @@
             this.txtNomeProd = new System.Windows.Forms.TextBox();
             this.txtPrecoProd = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnExcluirProd = new System.Windows.Forms.Button();
             this.txtFiltrar = new System.Windows.Forms.TextBox();
             this.lblFiltrar = new System.Windows.Forms.Label();
             this.dgvConsultaProd = new System.Windows.Forms.DataGridView();
-            this.btnExcluirProd = new System.Windows.Forms.Button();
+            this.btnEditarProd = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -60,7 +61,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(624, 352);
+            this.tabControl1.Size = new System.Drawing.Size(625, 352);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -175,6 +176,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnEditarProd);
             this.tabPage2.Controls.Add(this.btnExcluirProd);
             this.tabPage2.Controls.Add(this.txtFiltrar);
             this.tabPage2.Controls.Add(this.lblFiltrar);
@@ -182,23 +184,33 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(616, 317);
+            this.tabPage2.Size = new System.Drawing.Size(617, 317);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "CONSULTA";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnExcluirProd
+            // 
+            this.btnExcluirProd.Location = new System.Drawing.Point(405, 7);
+            this.btnExcluirProd.Name = "btnExcluirProd";
+            this.btnExcluirProd.Size = new System.Drawing.Size(94, 28);
+            this.btnExcluirProd.TabIndex = 3;
+            this.btnExcluirProd.Text = "Excluir";
+            this.btnExcluirProd.UseVisualStyleBackColor = true;
+            this.btnExcluirProd.Click += new System.EventHandler(this.btnExcluirProd_Click);
+            // 
             // txtFiltrar
             // 
-            this.txtFiltrar.Location = new System.Drawing.Point(146, 7);
+            this.txtFiltrar.Location = new System.Drawing.Point(77, 7);
             this.txtFiltrar.Name = "txtFiltrar";
-            this.txtFiltrar.Size = new System.Drawing.Size(295, 28);
+            this.txtFiltrar.Size = new System.Drawing.Size(309, 28);
             this.txtFiltrar.TabIndex = 2;
             this.txtFiltrar.TextChanged += new System.EventHandler(this.txtFiltrar_TextChanged);
             // 
             // lblFiltrar
             // 
             this.lblFiltrar.AutoSize = true;
-            this.lblFiltrar.Location = new System.Drawing.Point(76, 10);
+            this.lblFiltrar.Location = new System.Drawing.Point(7, 10);
             this.lblFiltrar.Name = "lblFiltrar";
             this.lblFiltrar.Size = new System.Drawing.Size(63, 22);
             this.lblFiltrar.TabIndex = 1;
@@ -220,21 +232,21 @@
             this.dgvConsultaProd.TabIndex = 0;
             this.dgvConsultaProd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultaProd_CellContentClick);
             // 
-            // btnExcluirProd
+            // btnEditarProd
             // 
-            this.btnExcluirProd.Location = new System.Drawing.Point(476, 7);
-            this.btnExcluirProd.Name = "btnExcluirProd";
-            this.btnExcluirProd.Size = new System.Drawing.Size(94, 28);
-            this.btnExcluirProd.TabIndex = 3;
-            this.btnExcluirProd.Text = "Excluir";
-            this.btnExcluirProd.UseVisualStyleBackColor = true;
-            this.btnExcluirProd.Click += new System.EventHandler(this.btnExcluirProd_Click);
+            this.btnEditarProd.Location = new System.Drawing.Point(515, 7);
+            this.btnEditarProd.Name = "btnEditarProd";
+            this.btnEditarProd.Size = new System.Drawing.Size(94, 28);
+            this.btnEditarProd.TabIndex = 4;
+            this.btnEditarProd.Text = "Editar";
+            this.btnEditarProd.UseVisualStyleBackColor = true;
+            this.btnEditarProd.Click += new System.EventHandler(this.btnEditarProd_Click);
             // 
             // frmProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 352);
+            this.ClientSize = new System.Drawing.Size(625, 352);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmProdutos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -269,5 +281,6 @@
         private System.Windows.Forms.TextBox txtFiltrar;
         private System.Windows.Forms.Label lblFiltrar;
         private System.Windows.Forms.Button btnExcluirProd;
+        private System.Windows.Forms.Button btnEditarProd;
     }
 }

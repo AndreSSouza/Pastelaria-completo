@@ -9,8 +9,8 @@ using System.Data.SqlClient;//Precisa
 namespace Pastelaria.DAL
 {
     class Conexao
-    {
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-81NJOA4; Initial Catalog=BDPASTELARIA; Integrated Security=True;");
+    {   //DESKTOP-81NJOA4
+        SqlConnection con = new SqlConnection(@"Data Source=.\sqlserver; Initial Catalog=BDPASTELARIA; Integrated Security=True;");
 
         public SqlConnection Conectar(){
             if (con.State == ConnectionState.Closed)

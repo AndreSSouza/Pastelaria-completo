@@ -14,6 +14,7 @@ namespace Pastelaria.UI
     {
         BLL.Produto prod = new BLL.Produto();
         DAL.ProdutoDAL prodDAL = new DAL.ProdutoDAL();
+        bool editar = false; //Controle de edição false=cadastra verdadeiro=atualizar
 
         public frmProdutos()
         {
@@ -32,7 +33,10 @@ namespace Pastelaria.UI
             prod.Preco = Convert.ToDouble(txtPrecoProd.Text);
             prod.Obs = txtObsProd.Text;
 
-            prodDAL.Cadastrar(prod);
+            if (editar == false)
+                prodDAL.Cadastrar(prod);
+            else
+                prodDAL.Atualizar(prod);
 
             MessageBox.Show("Dados Gravados com Sucesso!");
 
@@ -67,6 +71,7 @@ namespace Pastelaria.UI
                 }
                 txtNomeProd.Focus();
             }
+            editar = false;
         }
 
         private void lblFiltrar_Click(object sender, EventArgs e)
@@ -83,6 +88,30 @@ namespace Pastelaria.UI
                 prodDAL.Excluir(prod);
                 dgvConsultaProd.DataSource = prodDAL.ConsultarTodos();
             }
+        }
+
+        private void btnEditarProd_Click(object sender, EventArgs e)
+        {
+            //executar metodos de retorno
+            if (dgvConsultaProd.RowCount > 0)
+            {
+                //Executar metodo de retorno dos dadoss
+                prod.Codproduto = Convert.ToInt16(dgvConsultaProd.SelectedCells[0].Value);
+                prod = prodDAL.RetornarDados(prod);
+
+                //preenchendo txts
+                txtNomeProd.Text = prod.Nomeproduto;
+                txtObsProd.Text = prod.Obs;
+                txtPrecoProd.Text = prod.Preco.ToString();
+                txtQuantidadeProd.Text = prod.Quantidade.ToString();
+
+                //redirecionando para a primeira aba
+                tabControl1.SelectedTab = tabPage1;
+
+                //editar para verdadeiro
+                editar = true;
+            }
+
         }
     }
 }
