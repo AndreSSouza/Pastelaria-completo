@@ -41,10 +41,11 @@
             this.lblNomeFunc = new System.Windows.Forms.Label();
             this.txtNomeFunc = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnExcluirFunc = new System.Windows.Forms.Button();
             this.txtFiltrar = new System.Windows.Forms.TextBox();
             this.lblFiltrar = new System.Windows.Forms.Label();
             this.dgvConsultaFunc = new System.Windows.Forms.DataGridView();
-            this.btnExcluirFunc = new System.Windows.Forms.Button();
+            this.btnEditarFunc = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -175,6 +176,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnEditarFunc);
             this.tabPage2.Controls.Add(this.btnExcluirFunc);
             this.tabPage2.Controls.Add(this.txtFiltrar);
             this.tabPage2.Controls.Add(this.lblFiltrar);
@@ -187,11 +189,21 @@
             this.tabPage2.Text = "CONSULTA";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnExcluirFunc
+            // 
+            this.btnExcluirFunc.Location = new System.Drawing.Point(422, 7);
+            this.btnExcluirFunc.Name = "btnExcluirFunc";
+            this.btnExcluirFunc.Size = new System.Drawing.Size(75, 28);
+            this.btnExcluirFunc.TabIndex = 6;
+            this.btnExcluirFunc.Text = "Excluir";
+            this.btnExcluirFunc.UseVisualStyleBackColor = true;
+            this.btnExcluirFunc.Click += new System.EventHandler(this.btnExcluirFunc_Click);
+            // 
             // txtFiltrar
             // 
             this.txtFiltrar.Location = new System.Drawing.Point(75, 6);
             this.txtFiltrar.Name = "txtFiltrar";
-            this.txtFiltrar.Size = new System.Drawing.Size(441, 28);
+            this.txtFiltrar.Size = new System.Drawing.Size(341, 28);
             this.txtFiltrar.TabIndex = 5;
             this.txtFiltrar.TextChanged += new System.EventHandler(this.txtFiltrar_TextChanged);
             // 
@@ -218,16 +230,17 @@
             this.dgvConsultaFunc.Size = new System.Drawing.Size(603, 310);
             this.dgvConsultaFunc.TabIndex = 3;
             this.dgvConsultaFunc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultaProd_CellContentClick);
+            this.dgvConsultaFunc.DoubleClick += new System.EventHandler(this.dgvConsultaFunc_DoubleClick);
             // 
-            // btnExcluirFunc
+            // btnEditarFunc
             // 
-            this.btnExcluirFunc.Location = new System.Drawing.Point(522, 6);
-            this.btnExcluirFunc.Name = "btnExcluirFunc";
-            this.btnExcluirFunc.Size = new System.Drawing.Size(75, 28);
-            this.btnExcluirFunc.TabIndex = 6;
-            this.btnExcluirFunc.Text = "Excluir";
-            this.btnExcluirFunc.UseVisualStyleBackColor = true;
-            this.btnExcluirFunc.Click += new System.EventHandler(this.btnExcluirFunc_Click);
+            this.btnEditarFunc.Location = new System.Drawing.Point(511, 7);
+            this.btnEditarFunc.Name = "btnEditarFunc";
+            this.btnEditarFunc.Size = new System.Drawing.Size(84, 28);
+            this.btnEditarFunc.TabIndex = 7;
+            this.btnEditarFunc.Text = "Editar";
+            this.btnEditarFunc.UseVisualStyleBackColor = true;
+            this.btnEditarFunc.Click += new System.EventHandler(this.btnEditarFunc_Click);
             // 
             // frmFuncionarios
             // 
@@ -268,5 +281,6 @@
         private System.Windows.Forms.Label lblFiltrar;
         private System.Windows.Forms.DataGridView dgvConsultaFunc;
         private System.Windows.Forms.Button btnExcluirFunc;
+        private System.Windows.Forms.Button btnEditarFunc;
     }
 }

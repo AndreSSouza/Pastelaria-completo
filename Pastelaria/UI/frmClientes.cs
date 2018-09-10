@@ -14,6 +14,7 @@ namespace Pastelaria.UI
     {
         BLL.Cliente cli = new BLL.Cliente();
         DAL.ClienteDAL cliDAL = new DAL.ClienteDAL();
+        bool editar = false;
 
         public frmClientes()
         {
@@ -66,11 +67,15 @@ namespace Pastelaria.UI
             cli.Telefone = mtxtTelefoneCliente.Text;
 
             //Executar método de cadastro DAL
-            cliDAL.Cadastrar(cli);
+            if (editar == false)
+                cliDAL.Cadastrar(cli);
+            else
+                cliDAL.Atualizar(cli);
 
             //Mensagem de confirmação
             MessageBox.Show("Dados Gravados com Sucesso");
 
+            btnLimparCli.PerformClick();
         }
 
         private void frmClientes_Load(object sender, EventArgs e)
@@ -105,6 +110,36 @@ namespace Pastelaria.UI
             cli.Codcliente = Convert.ToInt16(dgvConsultaCli.SelectedCells[0].Value);
             cliDAL.Excluir(cli);
             dgvConsultaCli.DataSource = cliDAL.ConsultarTodos();
+        }
+
+        private void btnEditarCli_Click(object sender, EventArgs e)
+        {
+            //executar metodos de retorno
+            if (dgvConsultaCli.RowCount > 0)
+            {
+                //Executar metodo de retorno dos dadoss
+                cli.Codcliente = Convert.ToInt16(dgvConsultaCli.SelectedCells[0].Value);
+                cli = cliDAL.RetornarDados(cli);
+
+                //preenchendo txts
+                txtNomeCliente.Text = cli.Nome;
+                mtxtTelefoneCliente.Text = cli.Telefone;
+                mtxtCelularCliente.Text = cli.Celular;
+                txtEnderecoCliente.Text = cli.Endereco;
+                txtNumeroCliente.Text = cli.Numero;
+                txtBairroCliente.Text = cli.Bairro;
+                txtCidadeCliente.Text = cli.Cidade;
+                mtxtCpfCliente.Text = cli.Cpf;
+                mtxtCep.Text = cli.Cep;
+                txtEmailCliente.Text = cli.Email;
+                txtReferenciaCliente.Text = cli.Referencia;                
+
+                //redirecionando para a primeira aba
+                tabControl1.SelectedTab = tabPage1;
+
+                //editar para verdadeiro
+                editar = true;
+            }
         }
     }
 }

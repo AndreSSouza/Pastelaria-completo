@@ -55,10 +55,11 @@
             this.txtEmailCliente = new System.Windows.Forms.TextBox();
             this.txtNomeCliente = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnExcluirCli = new System.Windows.Forms.Button();
             this.txtFiltrar = new System.Windows.Forms.TextBox();
             this.lblFiltrar = new System.Windows.Forms.Label();
             this.dgvConsultaCli = new System.Windows.Forms.DataGridView();
-            this.btnExcluirCli = new System.Windows.Forms.Button();
+            this.btnEditarCli = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -332,6 +333,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnEditarCli);
             this.tabPage2.Controls.Add(this.btnExcluirCli);
             this.tabPage2.Controls.Add(this.txtFiltrar);
             this.tabPage2.Controls.Add(this.lblFiltrar);
@@ -344,11 +346,21 @@
             this.tabPage2.Text = "CONSULTA";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnExcluirCli
+            // 
+            this.btnExcluirCli.Location = new System.Drawing.Point(483, 6);
+            this.btnExcluirCli.Name = "btnExcluirCli";
+            this.btnExcluirCli.Size = new System.Drawing.Size(94, 28);
+            this.btnExcluirCli.TabIndex = 6;
+            this.btnExcluirCli.Text = "Excluir";
+            this.btnExcluirCli.UseVisualStyleBackColor = true;
+            this.btnExcluirCli.Click += new System.EventHandler(this.btnExcluirCli_Click);
+            // 
             // txtFiltrar
             // 
             this.txtFiltrar.Location = new System.Drawing.Point(82, 6);
             this.txtFiltrar.Name = "txtFiltrar";
-            this.txtFiltrar.Size = new System.Drawing.Size(488, 28);
+            this.txtFiltrar.Size = new System.Drawing.Size(395, 28);
             this.txtFiltrar.TabIndex = 5;
             this.txtFiltrar.TextChanged += new System.EventHandler(this.txtFiltrar_TextChanged);
             // 
@@ -375,15 +387,15 @@
             this.dgvConsultaCli.Size = new System.Drawing.Size(676, 495);
             this.dgvConsultaCli.TabIndex = 3;
             // 
-            // btnExcluirCli
+            // btnEditarCli
             // 
-            this.btnExcluirCli.Location = new System.Drawing.Point(576, 6);
-            this.btnExcluirCli.Name = "btnExcluirCli";
-            this.btnExcluirCli.Size = new System.Drawing.Size(94, 28);
-            this.btnExcluirCli.TabIndex = 6;
-            this.btnExcluirCli.Text = "Excluir";
-            this.btnExcluirCli.UseVisualStyleBackColor = true;
-            this.btnExcluirCli.Click += new System.EventHandler(this.btnExcluirCli_Click);
+            this.btnEditarCli.Location = new System.Drawing.Point(593, 6);
+            this.btnEditarCli.Name = "btnEditarCli";
+            this.btnEditarCli.Size = new System.Drawing.Size(75, 28);
+            this.btnEditarCli.TabIndex = 7;
+            this.btnEditarCli.Text = "Editar";
+            this.btnEditarCli.UseVisualStyleBackColor = true;
+            this.btnEditarCli.Click += new System.EventHandler(this.btnEditarCli_Click);
             // 
             // frmClientes
             // 
@@ -438,5 +450,6 @@
         private System.Windows.Forms.Label lblFiltrar;
         private System.Windows.Forms.DataGridView dgvConsultaCli;
         private System.Windows.Forms.Button btnExcluirCli;
+        private System.Windows.Forms.Button btnEditarCli;
     }
 }

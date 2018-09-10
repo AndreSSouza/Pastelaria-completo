@@ -36,27 +36,27 @@ namespace Pastelaria.DAL
             con.Desconectar();//Fechando Conexao
         }
 
-        //public void Atualizar(BLL.Produto prod)
-        //{
-        //    SqlCommand cmd = new SqlCommand(@"UPDATE PRODUTO SET NOMEPRODUTO = @NOMEPRODUTO, QUANTIDADE = @QUANTIDADE, PRECO = @PRECO, OBS =  @OBS WHERE CODPRODUTO = @CODPRODUTO");
+        public void Atualizar(BLL.Cliente cli)
+        {
+            SqlCommand cmd = new SqlCommand(@"UPDATE CLIENTE SET NOME = @NOME, TELEFONE = @TELEFONE, CELULAR = @CELULAR, EMAIL =  @EMAIL, ENDERECO = @ENDERECO, BAIRRO = @BAIRRO, CIDADE = @CIDADE, NUMERO =  @NUMERO, CEP = @CEP, REFERENCIA = @REFERENCIA, CPF = @CPF WHERE CODPRODUTO = @CODPRODUTO");
 
-        //    cmd.Connection = con.Conectar();
+            cmd.Connection = con.Conectar();
 
-        //    cmd.Parameters.AddWithValue("@NOME", cli.Nome);
-        //    cmd.Parameters.AddWithValue("@TELEFONE", cli.Telefone);
-        //    cmd.Parameters.AddWithValue("@CELULAR", cli.Celular);
-        //    cmd.Parameters.AddWithValue("@EMAIL", cli.Email);
-        //    cmd.Parameters.AddWithValue("@ENDERECO", cli.Endereco);
-        //    cmd.Parameters.AddWithValue("@BAIRRO", cli.Bairro);
-        //    cmd.Parameters.AddWithValue("@CIDADE", cli.Cidade);
-        //    cmd.Parameters.AddWithValue("@NUMERO", cli.Numero);
-        //    cmd.Parameters.AddWithValue("@CEP", cli.Cep);
-        //    cmd.Parameters.AddWithValue("@REFERENCIA", cli.Referencia);
-        //    cmd.Parameters.AddWithValue("@CPF", cli.Cpf);
+            cmd.Parameters.AddWithValue("@NOME", cli.Nome);
+            cmd.Parameters.AddWithValue("@TELEFONE", cli.Telefone);
+            cmd.Parameters.AddWithValue("@CELULAR", cli.Celular);
+            cmd.Parameters.AddWithValue("@EMAIL", cli.Email);
+            cmd.Parameters.AddWithValue("@ENDERECO", cli.Endereco);
+            cmd.Parameters.AddWithValue("@BAIRRO", cli.Bairro);
+            cmd.Parameters.AddWithValue("@CIDADE", cli.Cidade);
+            cmd.Parameters.AddWithValue("@NUMERO", cli.Numero);
+            cmd.Parameters.AddWithValue("@CEP", cli.Cep);
+            cmd.Parameters.AddWithValue("@REFERENCIA", cli.Referencia);
+            cmd.Parameters.AddWithValue("@CPF", cli.Cpf);
 
-        //    cmd.ExecuteNonQuery();
-        //    con.Desconectar();
-        //}
+            cmd.ExecuteNonQuery();
+            con.Desconectar();
+        }
 
         public DataTable ConsultarTodos()
         {
@@ -84,6 +84,34 @@ namespace Pastelaria.DAL
             cmd.Parameters.AddWithValue("@CODCLIENTE", cli.Codcliente);
             cmd.ExecuteNonQuery();
             con.Desconectar();
+        }
+
+        public BLL.Cliente RetornarDados(BLL.Cliente cli)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM CLIENTE WHERE CODCLIENTE = @CODCLIENTE");
+            cmd.Connection = con.Conectar();
+            cmd.Parameters.AddWithValue("@CODCLIENTE", cli.Codcliente);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                cli.Codcliente = Convert.ToInt16(dr["CODCLIENTE"]);
+                cli.Nome = dr["NOME"].ToString();
+                cli.Telefone = dr["TELEFONE"].ToString();
+                cli.Celular = dr["CELULAR"].ToString();
+                cli.Email = dr["EMAIL"].ToString();
+                cli.Endereco = dr["ENDERECO"].ToString();
+                cli.Cidade = dr["CIDADE"].ToString();
+                cli.Numero = dr["NUMERO"].ToString();
+                cli.Cep = dr["CEP"].ToString();
+                cli.Referencia = dr["REFERENCIA"].ToString();
+                cli.Cpf = dr["CPF"].ToString();
+            }
+
+            dr.Close();
+            con.Desconectar();
+            return cli;
+
         }
 
     }
